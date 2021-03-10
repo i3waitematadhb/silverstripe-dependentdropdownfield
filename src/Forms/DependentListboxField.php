@@ -149,11 +149,7 @@ class DependentListboxField extends ListboxField
             }
         }
 
-        if (count($this->getSize())) {
-            return ['' => $this->getSize()] + (array) $source;
-        } else {
-            return $source;
-        }
+        return $source;
     }
 
     /**

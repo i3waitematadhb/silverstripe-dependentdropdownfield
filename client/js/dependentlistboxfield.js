@@ -1,6 +1,6 @@
-jQuery.entwine("dependent-listbox", function ($) {
+jQuery.entwine("dependentlistbox", function ($) {
 
-    $(":input.dependent-dropdown").entwine({
+    $(":input.dependent-listbox").entwine({
         onmatch: function () {
             var drop = this;
             var depends = ($(":input[name=" + drop.data('depends').replace(/[#;&,.+*~':"!^$[\]()=>|\/]/g, "\\$&") + "]"));

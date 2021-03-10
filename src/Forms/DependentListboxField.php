@@ -60,8 +60,8 @@ class DependentListboxField extends ListboxField
         // we are unable to store Closure as a normal source
         $this->sourceCallback = $source;
         $this
-            ->addExtraClass('dependent-dropdown')
-            ->addExtraClass('dropdown');
+            ->addExtraClass('dependent-listbox')
+            ->addExtraClass('listbox');
     }
 
     /**
@@ -149,8 +149,8 @@ class DependentListboxField extends ListboxField
             }
         }
 
-        if ($this->getHasEmptyDefault()) {
-            return ['' => $this->getEmptyString()] + (array) $source;
+        if (count($this->getSize())) {
+            return ['' => $this->getSize()] + (array) $source;
         } else {
             return $source;
         }
@@ -184,7 +184,6 @@ class DependentListboxField extends ListboxField
         $this->addExtraClass('listbox');
         $this->setAttribute('data-link', $this->Link('load'));
         $this->setAttribute('data-depends', $this->getDepends()->getName());
-        $this->setAttribute('data-empty', $this->getEmptyString());
         $this->setAttribute('data-unselected', $this->getUnselectedString());
 
         return parent::Field($properties);

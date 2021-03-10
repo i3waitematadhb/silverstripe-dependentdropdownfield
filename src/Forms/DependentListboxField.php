@@ -19,7 +19,7 @@ use SilverStripe\Forms\FormField;
  *
  * @package SilverStripe\Forms
  */
-class DependentDropdownField extends DropdownField
+class DependentListboxField extends DropdownField
 {
     /**
      * @var array
@@ -155,7 +155,7 @@ class DependentDropdownField extends DropdownField
         }
     }
 
-     /**
+    /**
      * @param \Closure $source
      * @return $this
      */
@@ -176,11 +176,11 @@ class DependentDropdownField extends DropdownField
         }
 
         Requirements::javascript(
-            'sheadawson/silverstripe-dependentdropdownfield:client/js/dependentdropdownfield.js'
+            'sheadawson/silverstripe-dependentdropdownfield:client/js/dependentlistboxfield.js'
         );
 
-        $this->addExtraClass('dependent-dropdown');
-        $this->addExtraClass('dropdown');
+        $this->addExtraClass('dependent-listbox');
+        $this->addExtraClass('listbox');
         $this->setAttribute('data-link', $this->Link('load'));
         $this->setAttribute('data-depends', $this->getDepends()->getName());
         $this->setAttribute('data-empty', $this->getEmptyString());

@@ -5,6 +5,7 @@ namespace Sheadawson\DependentDropdown\Forms;
 use SilverStripe\Admin\LeftAndMain;
 use SilverStripe\Control\Controller;
 use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\ListboxField;
 use SilverStripe\Control\HTTPResponse;
 use SilverStripe\Core\Convert;
 use SilverStripe\ORM\Map;
@@ -19,7 +20,7 @@ use SilverStripe\Forms\FormField;
  *
  * @package SilverStripe\Forms
  */
-class DependentListboxField extends DropdownField
+class DependentListboxField extends ListboxField
 {
     /**
      * @var array
